@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -9,6 +10,8 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { experience } from "@/data/content";
 
 export function Experience() {
+  const itemRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
   return (
     <section id="experience" className="bg-pale/40 py-24">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
@@ -19,11 +22,34 @@ export function Experience() {
         <div className="relative mt-14">
           <div className="absolute left-[7px] top-2 hidden h-[calc(100%-1rem)] w-px bg-border sm:block" />
 
-          <Accordion type="single" collapsible defaultValue="item-0" className="space-y-3">
-            {experience.map((role, i) => (
+          <Accordion
+            type="single"
+            collapsible
+            defaultValue="item-0"
+            className="space-y-3"
+            onValueChange={(value) => {
+              if (!value) return;
+              // Opening an item can collapse a long sibling above it, shifting
+              // the whole list up so the item you just tapped scrolls out of
+              // view. Nudge it back into view once the collapse animation
+              // (200ms, see tailwind.config.js) settles.
+              window.setTimeout(() => {
+                itemRefs.current[value]?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                });
+              }, 250);
+            }}
+          >
+            {experience.map((role, i) => {
+              const value = `item-${i}`;
+              return (
               <Reveal key={role.role + role.dates} delay={i * 60}>
                 <AccordionItem
-                  value={`item-${i}`}
+                  ref={(el) => {
+                    itemRefs.current[value] = el;
+                  }}
+                  value={value}
                   className="relative border-none pl-0 sm:pl-8"
                 >
                   <span className="absolute left-0 top-6 hidden h-3.5 w-3.5 rounded-full border-2 border-secondary bg-paper sm:block" />
@@ -52,7 +78,8 @@ export function Experience() {
                   </div>
                 </AccordionItem>
               </Reveal>
-            ))}
+              );
+            })}
           </Accordion>
         </div>
       </div>

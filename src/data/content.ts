@@ -61,6 +61,8 @@ export const skillGroups: SkillGroup[] = [
       "RfQ to SOP Delivery",
       "QCC (Quality Control Circles)",
       "Lean & Kaizen (NYS)",
+      "Electrical Distribution Systems",
+      "ITIL 4 Foundation",
     ],
   },
   {
@@ -79,8 +81,16 @@ export const skillGroups: SkillGroup[] = [
     label: "Engineering Foundation",
     skills: [
       "MSc, Electronics & Telecommunications Engineering",
-      "Electrical Distribution Systems",
-      "ITIL 4 Foundation",
+      "Telecommunications",
+      "Networks",
+      "Network Protocols",
+      "Digital Systems",
+      "Programming",
+      "Signal Processing",
+      "Analog Electronics",
+      "Microprocessors",
+      "Circuit Theory",
+      "Data Communications",
     ],
   },
 ];

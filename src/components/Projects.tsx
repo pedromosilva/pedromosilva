@@ -8,7 +8,7 @@ export function Projects() {
       <Reveal>
         <SectionHeading eyebrow="Vibe-coded projects" title="Personal projects" />
         <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink/80">
-          Built with AI-assisted development, mainly Claude Code, on a mostly no-backend toolchain.
+          Built with AI-assisted development.
         </p>
       </Reveal>
 
