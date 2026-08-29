@@ -282,13 +282,6 @@ export const projects: Project[] = [
     stack: ["Vercel"],
     href: "https://cool-countdown-sn4o.vercel.app",
   },
-  {
-    name: "Your next build",
-    description: "Reserved for the next vibe-coded project. Swap in a name, description and link.",
-    stack: ["Add stack"],
-    href: "#",
-    placeholder: true,
-  },
 ];
 
 export type CommunityItem = {
