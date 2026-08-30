@@ -60,12 +60,13 @@ export function Hero() {
               className="clip-corner aspect-square w-full object-cover"
             />
           </div>
-          <div className="relative z-10 -ml-6 -mt-9 inline-flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-lg">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-spark-soft font-serif text-sm font-semibold text-primary">
-              RTE
-            </span>
-            <div className="leading-tight">
-              <p className="text-xs font-semibold text-ink">Human with a passion for excellent Teamwork.</p>
+          <div className="relative z-10 -ml-10 -mt-9 inline-flex">
+            <div className="relative inline-flex overflow-hidden rounded-full p-[3px] shadow-lg">
+              {/* Rotating aura: a single soft glowing comet sweeping around the pill's border, not a full static ring — clipped so it can never spill onto the photo */}
+              <div className="absolute inset-[-100%] animate-spin-slow blur-[3px] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_260deg,hsl(var(--spark))_300deg,hsl(var(--secondary))_335deg,transparent_360deg)]" />
+              <div className="relative inline-flex items-center rounded-full bg-card px-5 py-3">
+                <p className="text-xs font-semibold text-ink">Human with a passion for excellent Teamwork.</p>
+              </div>
             </div>
           </div>
 
