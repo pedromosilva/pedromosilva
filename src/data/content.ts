@@ -388,4 +388,9 @@ export const links: LinkItem[] = [
     value: "pedromosilva.eurosky.social",
     href: "https://sifa.id/p/pedromosilva.eurosky.social",
   },
+  {
+    label: "Mastodon",
+    value: "@pedromosilva",
+    href: "https://mastodon.social/@pedromosilva",
+  },
 ];
