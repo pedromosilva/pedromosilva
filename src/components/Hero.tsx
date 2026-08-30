@@ -60,7 +60,7 @@ export function Hero() {
               className="clip-corner aspect-square w-full object-cover"
             />
           </div>
-          <div className="relative z-10 -ml-10 -mt-[46px] inline-flex">
+          <div className="relative z-10 -ml-10 inline-flex -translate-y-[15px]">
             <div className="relative inline-flex overflow-hidden rounded-full p-[3px] shadow-lg">
               {/* Rotating aura: a single soft glowing comet sweeping around the pill's border, not a full static ring — clipped so it can never spill onto the photo */}
               <div className="absolute inset-[-100%] animate-spin-slow blur-[3px] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_260deg,hsl(var(--spark))_300deg,hsl(var(--secondary))_335deg,transparent_360deg)]" />
