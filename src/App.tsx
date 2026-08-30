@@ -1,6 +1,7 @@
 import { About } from "@/components/About";
 import { Certifications } from "@/components/Certifications";
 import { Community } from "@/components/Community";
+import { Education } from "@/components/Education";
 import { Experience } from "@/components/Experience";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -17,6 +18,7 @@ function App() {
         <Hero />
         <About />
         <Experience />
+        <Education />
         <Skills />
         <Certifications />
         <Projects />

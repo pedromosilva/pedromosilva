@@ -1,6 +1,7 @@
 export const profile = {
   name: "Pedro Oliveira da Silva",
-  tagline: "Agile Coach · AI-Assisted Delivery · Release Train Engineer",
+  tagline:
+    "Agile Coach · AI-Assisted Delivery · Release Train Engineer · MSc Electronics & Telecommunications Engineering",
   location: "Cologne, DE · Porto, PT",
   languages: ["Portuguese (Native)", "English (Fluent)", "German (Fluent)"],
   email: "pedromosilva@proton.me",
@@ -224,6 +225,33 @@ export const experience: ExperienceItem[] = [
       "ZigBee-based indoor localization research (\"LoPeS\" project), feeding into his Master's thesis.",
     ],
     condensed: true,
+  },
+];
+
+export type Education = {
+  degree: string;
+  institution: string;
+  dates: string;
+  thesis?: string;
+  paper?: {
+    title: string;
+    venue: string;
+    href: string;
+  };
+};
+
+export const education: Education[] = [
+  {
+    degree: "MSc, Electronics & Telecommunications Engineering",
+    institution: "Universidade de Aveiro",
+    dates: "2003 to 2009",
+    thesis:
+      "MAC Protocol for Localization Systems, building on the ZigBee-based indoor localization research from the \"LoPeS\" project.",
+    paper: {
+      title: "Implementing the FTT-L Protocol with ZigBee",
+      venue: "IEEE ICECS 2009",
+      href: "https://ieeexplore.ieee.org/document/5410753",
+    },
   },
 ];
 
