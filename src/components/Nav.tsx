@@ -40,7 +40,13 @@ export function Nav() {
 
   const go = (id: string) => {
     setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const el = document.getElementById(id);
+    if (!el) return;
+    const header = document.querySelector("header");
+    const headerHeight = header?.getBoundingClientRect().height ?? 0;
+    const padding = 32;
+    const top = el.getBoundingClientRect().top + window.scrollY - headerHeight - padding;
+    window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
   };
 
   return (
@@ -57,7 +63,7 @@ export function Nav() {
           Pedro<span className="text-secondary">.</span>
         </button>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {SECTIONS.map(({ id, label }) => (
             <button
               key={id}
@@ -76,13 +82,13 @@ export function Nav() {
 
         <button
           onClick={() => go("links")}
-          className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-transform hover:-translate-y-0.5 hover:bg-primary md:inline-flex"
+          className="hidden whitespace-nowrap rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-transform hover:-translate-y-0.5 hover:bg-primary lg:inline-flex"
         >
           Get in touch
         </button>
 
         <button
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-ink md:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-ink lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -98,7 +104,7 @@ export function Nav() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-paper px-6 py-4 md:hidden">
+        <div className="border-t border-border bg-paper px-6 py-4 lg:hidden">
           <div className="flex flex-col gap-1">
             {SECTIONS.map(({ id, label }) => (
               <button

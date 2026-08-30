@@ -26,6 +26,15 @@ export function Projects() {
               }`}
             >
               <div>
+                {project.image && (
+                  <div className="-mx-8 -mt-8 mb-6 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={`${project.name} preview`}
+                      className="h-44 w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                )}
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="font-serif text-2xl font-semibold text-ink">{project.name}</h3>
                   {!project.placeholder && (

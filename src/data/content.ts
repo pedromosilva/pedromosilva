@@ -1,7 +1,7 @@
 export const profile = {
   name: "Pedro Oliveira da Silva",
   tagline: "Agile Coach · AI-Assisted Delivery · Release Train Engineer",
-  location: "Cologne, Germany · Porto, Portugal",
+  location: "Cologne, DE · Porto, PT",
   languages: ["Portuguese (Native)", "English (Fluent)", "German (Fluent)"],
   email: "pedromosilva@proton.me",
   summary:
@@ -48,6 +48,13 @@ export const skillGroups: SkillGroup[] = [
       "Visual Management",
       "Mentoring",
       "Coaching",
+      "PDCA",
+      "Shu Ha Ri",
+      "Flight Levels",
+      "ECRS Method",
+      "OKRs",
+      "Workshop Facilitation",
+      "Liberating Structures",
     ],
   },
   {
@@ -63,6 +70,7 @@ export const skillGroups: SkillGroup[] = [
       "Lean & Kaizen (NYS)",
       "Electrical Distribution Systems",
       "ITIL 4 Foundation",
+      "Leadership",
     ],
   },
   {
@@ -74,6 +82,9 @@ export const skillGroups: SkillGroup[] = [
       "Agile and AI Transformation",
       "Claude Code",
       "Agents & Skills Design",
+      "Visual Studio Code",
+      "GitHub",
+      "MCP",
     ],
   },
   {
@@ -220,6 +231,7 @@ export type Certification = {
   name: string;
   issuer: string;
   href?: string;
+  badge?: string;
 };
 
 export const certifications: Certification[] = [
@@ -227,41 +239,49 @@ export const certifications: Certification[] = [
     name: "Certified SAFe® 6 Release Train Engineer",
     issuer: "SAFe by Scaled Agile, Inc.",
     href: "https://www.credly.com/badges/4c007111-d37e-4cef-9979-5c8dc1b68655",
+    badge: "/badges/rte6.png",
   },
   {
     name: "Certified SAFe® 6 Advanced Scrum Master",
     issuer: "SAFe by Scaled Agile, Inc.",
     href: "https://www.credly.com/badges/b91c6603-72f9-4a41-98d3-d763918a4bdb",
+    badge: "/badges/sasm6.png",
   },
   {
     name: "Certified SAFe® 5 Agilist",
     issuer: "SAFe by Scaled Agile, Inc.",
     href: "https://www.credly.com/badges/b42553e5-b0f4-402f-b52f-f7b5f164cb26",
+    badge: "/badges/sa5.png",
   },
   {
     name: "PMP®, Project Management Professional",
     issuer: "Project Management Institute",
     href: "https://www.credly.com/badges/9c89e050-6ae3-4bcd-aef0-d69ca8fd3d17",
+    badge: "/badges/pmp.png",
   },
   {
     name: "Professional Scrum Master I (PSM I)",
     issuer: "Scrum.org",
     href: "https://www.credly.com/badges/8cb94b65-8389-4e17-9cea-d5082f2dbb7c",
+    badge: "/badges/psm1.png",
   },
   {
     name: "Professional Scrum Master II (PSM II)",
     issuer: "Scrum.org",
     href: "https://www.credly.com/badges/66573c94-e3b5-4c0f-b810-0eb007d4573e",
+    badge: "/badges/psm2.png",
   },
   {
     name: "ITIL® 4 Foundation",
     issuer: "PeopleCert",
     href: "https://www.credly.com/badges/1322a8ee-dcd3-4690-aa2b-1438851f3c7c",
+    badge: "/badges/itil4.png",
   },
   {
     name: "Agile Team Facilitation",
     issuer: "ICAgile",
     href: "https://www.credly.com/badges/f39b7c61-8a08-491d-b7d4-3827ca37053e",
+    badge: "/badges/icp-atf.png",
   },
   {
     name: "Collaborative Meetings",
@@ -276,6 +296,7 @@ export type Project = {
   stack: string[];
   href: string;
   placeholder?: boolean;
+  image?: string;
 };
 
 export const projects: Project[] = [
@@ -285,12 +306,14 @@ export const projects: Project[] = [
       "A personal project built to learn and operate an end-to-end AI-integrated development pipeline, from idea to a shipped, running product.",
     stack: ["Claude Code", "Railway", "Vercel", "Sentry", "Stripe", "MCPs"],
     href: "https://guia.social",
+    image: "/projects/guia-social.jpg",
   },
   {
     name: "Cool Countdown",
     description: "A countdown timer app, vibe-coded and shipped to Vercel.",
     stack: ["Vercel"],
     href: "https://cool-countdown-sn4o.vercel.app",
+    image: "/projects/cool-countdown.jpg",
   },
 ];
 

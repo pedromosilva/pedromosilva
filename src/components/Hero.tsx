@@ -16,12 +16,7 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-6 sm:px-10 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-secondary shadow-sm backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-spark" />
-            {profile.location}
-          </div>
-
-          <h1 className="mt-6 font-serif text-4xl font-semibold leading-[1.08] text-ink text-balance sm:text-5xl lg:text-6xl">
+          <h1 className="font-serif text-4xl font-semibold leading-[1.08] text-ink text-balance sm:text-5xl lg:text-6xl">
             {profile.name}
           </h1>
 
@@ -65,12 +60,20 @@ export function Hero() {
               className="clip-corner aspect-square w-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-lg">
+          <div className="relative z-10 -ml-6 -mt-9 inline-flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-lg">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-spark-soft font-serif text-sm font-semibold text-primary">
               RTE
             </span>
             <div className="leading-tight">
               <p className="text-xs font-semibold text-ink">Human with a passion for excellent Teamwork.</p>
+            </div>
+          </div>
+
+          {/* Below the picture, on purpose: not the first thing a visitor reads. */}
+          <div className="mt-6 flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-secondary shadow-sm backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-spark" />
+              {profile.location}
             </div>
           </div>
         </div>
