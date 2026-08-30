@@ -316,6 +316,13 @@ export const projects: Project[] = [
     href: "https://cool-countdown-sn4o.vercel.app",
     image: "/projects/cool-countdown.jpg",
   },
+  {
+    name: "pedromosilva.vercel.app",
+    description: "This homepage itself, vibe-coded end to end and iterated on live with Claude.",
+    stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Claude Code"],
+    href: "https://pedromosilva.vercel.app",
+    image: "/projects/pedromosilva-vercel-app.jpg",
+  },
 ];
 
 export type CommunityItem = {
