@@ -32,12 +32,28 @@ export function Experience() {
               // Opening an item can collapse a long sibling above it, shifting
               // the whole list up so the item you just tapped scrolls out of
               // view. Nudge it back into view once the collapse animation
-              // (200ms, see tailwind.config.js) settles.
+              // (200ms, see tailwind.config.js) settles. Plain scrollIntoView
+              // doesn't know about the fixed header, so it can land the item
+              // right under it, hiding the title; account for the header's
+              // own height instead.
               window.setTimeout(() => {
-                itemRefs.current[value]?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "nearest",
-                });
+                const el = itemRefs.current[value];
+                if (!el) return;
+                const header = document.querySelector("header");
+                const headerHeight = header?.getBoundingClientRect().height ?? 0;
+                const padding = 16;
+                const rect = el.getBoundingClientRect();
+                if (rect.top < headerHeight + padding) {
+                  window.scrollBy({
+                    top: rect.top - headerHeight - padding,
+                    behavior: "smooth",
+                  });
+                } else if (rect.bottom > window.innerHeight) {
+                  window.scrollBy({
+                    top: rect.bottom - window.innerHeight + padding,
+                    behavior: "smooth",
+                  });
+                }
               }, 250);
             }}
           >
