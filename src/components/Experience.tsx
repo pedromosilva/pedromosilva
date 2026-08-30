@@ -43,7 +43,13 @@ export function Experience() {
                 const headerHeight = header?.getBoundingClientRect().height ?? 0;
                 const padding = 16;
                 const rect = el.getBoundingClientRect();
-                if (rect.top < headerHeight + padding) {
+                const availableHeight = window.innerHeight - headerHeight;
+                // When the item's own content is taller than the visible area
+                // (long bullet lists), it's impossible to show both its top and
+                // bottom at once. Always prioritize the title: align it just
+                // below the header rather than chasing the bottom edge, which
+                // would push the title off-screen above.
+                if (rect.top < headerHeight + padding || rect.height > availableHeight) {
                   window.scrollBy({
                     top: rect.top - headerHeight - padding,
                     behavior: "smooth",
