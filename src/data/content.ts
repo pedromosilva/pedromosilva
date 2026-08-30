@@ -317,6 +317,12 @@ export const certifications: Certification[] = [
     href: "https://www.credly.com/badges/8ceb70b5-27f7-40e0-80de-91bf0aa82cc0",
     badge: "/badges/miro-cm.png",
   },
+  {
+    name: "Introduction to Flight Levels",
+    issuer: "Flight Levels Academy",
+    href: "https://www.credential.net/f1a4ebf4-bbbe-44e2-b574-9e7325c07064",
+    badge: "/badges/flightlevels.png",
+  },
 ];
 
 export type Project = {
@@ -400,6 +406,11 @@ export const links: LinkItem[] = [
     label: "Credly",
     value: "Verified badges",
     href: "https://www.credly.com/users/pedro-miguel-oliveira-da-silva/badges/credly",
+  },
+  {
+    label: "Accredible",
+    value: "Verified certificates",
+    href: "https://www.credential.net/profile/pedrodasilva399/wallet",
   },
   {
     label: "GitHub",
