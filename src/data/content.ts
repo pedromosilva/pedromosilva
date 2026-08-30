@@ -312,7 +312,7 @@ export const projects: Project[] = [
   {
     name: "Cool Countdown",
     description: "A countdown timer app, vibe-coded and shipped to Vercel.",
-    stack: ["Vercel"],
+    stack: ["HTML", "CSS", "JavaScript", "Web Audio API", "Vercel"],
     href: "https://cool-countdown-sn4o.vercel.app",
     image: "/projects/cool-countdown.jpg",
   },
