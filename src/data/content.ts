@@ -287,6 +287,7 @@ export const certifications: Certification[] = [
     name: "Collaborative Meetings",
     issuer: "Miro, skill badge",
     href: "https://www.credly.com/badges/8ceb70b5-27f7-40e0-80de-91bf0aa82cc0",
+    badge: "/badges/miro-cm.png",
   },
 ];
 
